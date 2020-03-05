@@ -7,7 +7,7 @@ const TableBody = props => {
           <td>{autor.nome}</td>
           <td>{autor.livro}</td>
           <td>{autor.preco}</td>
-          <td><button onClick={() => {props.removeAutor(index)}}>Remover</button></td>
+          <td><button onClick={() => {props.removeAutor(index)}} className="waves-effect waves-light btn deep-purple darken-4">Remover</button></td>
       </tr>
     );
   });

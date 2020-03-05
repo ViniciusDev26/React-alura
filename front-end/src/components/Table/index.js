@@ -9,7 +9,7 @@ class Table extends Component {
     const { autores, removeAutor } = this.props;
 
     return (
-      <table>
+      <table className="centered highlight z-depth-1">
         <TableHead />
         <TableBody autores = {autores} removeAutor= {removeAutor}/>
       </table>

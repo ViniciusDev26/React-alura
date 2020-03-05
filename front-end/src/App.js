@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import './App.css';
+import 'materialize-css/dist/css/materialize.min.css';
+import Header from './components/Header'
 import Table from './components/Table';
+import Form from './components/Form'
 import autores from './data/autores';
 
 class App extends Component {
@@ -18,11 +20,19 @@ class App extends Component {
     })
   }
 
+  listenSubmit = autor => {
+    this.setState({ autores: [...this.state.autores, autor] })
+  }
+
   render(){
     return (
-      <div className="App">
-        <Table autores= { this.state.autores } removeAutor= {this.removeAutor} />
+    <>
+      <Header />
+      <Table autores= { this.state.autores } removeAutor= {this.removeAutor} />
+      <div className="container">
+        <Form listenSubmit={ this.listenSubmit }/>
       </div>
+    </>
     );
   }
 }
